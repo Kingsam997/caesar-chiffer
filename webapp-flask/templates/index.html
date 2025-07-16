@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cæsar Chiffer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #cf77b9;
+      padding: 40px;
+      margin: 0;
+    }
+
+    .logo-banner {
+      background-color: #f97316;
+      padding: 10px 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-bottom-right-radius: 15px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-text {
+      color: white;
+      font-size: 24px;
+      font-family: 'Brush Script MT', cursive;
+      text-shadow: 1px 1px 0 #000000;
+      margin: 0;
+    }
+
+    .main-content {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    h1 {
+      color: #ffffff;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    form {
+      background-color: white;
+      display: inline-block;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select {
+      padding: 8px;
+      margin: 10px 0 20px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .result {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #ffffff;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo-banner">
+    <h2 class="logo-text">Sameea's Silly Projects</h2>
+  </div>
+
+  <div class="main-content">
+    <h1>Cæsar Chiffer</h1>
+
+    <form method="POST">
+      <label for="mode">Velg modus:</label><br>
+      <select id="mode" name="mode">
+        <option value="encrypt">Krypter</option>
+        <option value="decrypt">Dekrypter</option>
+      </select><br><br>
+
+      <label for="text">Tekst:</label><br>
+      <input type="text" id="text" name="text" required><br>
+
+      <label for="shift">Forskyvning:</label><br>
+      <input type="number" id="shift" name="shift" required><br>
+
+      <input type="submit" value="Kjør">
+    </form>
+
+    {% if result %}
+      <div class="result">
+        <h2>Resultat:</h2>
+        <p>{{ result }}</p>
+      </div>
+    {% endif %}
+  </div>
+
+</body>
+</html>
